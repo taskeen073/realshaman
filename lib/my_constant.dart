@@ -26,4 +26,12 @@ class MyConstant {
   static String image16 = 'img/team.png';
   static String image17 = 'img/money.png';
   static String image18 = 'img/cat.png';
+
+  static Color yp = Color(0xf9a825);
+  static Color yl = Color(0xffd95a);
+  static Color yd = Color(0xc17900);
+  static Color ysp = Color(0xf9bf2d);
+  static Color ysl = Color(0xfff163);
+  static Color ysd = Color(0xc28f00);
+
 }

@@ -1,0 +1,41 @@
+-------------------- Auto-Git Log --------------------
+		Tue Sep 21 2021 07:37:35 GMT+0700 (Indochina Time)
+------------------------------------------------------
+
+Modified files:
+* lib/main.dart
+* pubspec.yaml
+
+
+Created files:
+* .autogit/autogit.json
+* img/bully.png
+* img/cat.png
+* img/find.png
+* img/herrer2.png
+* img/herrer3.png
+* img/hurrer.png
+* img/meet.png
+* img/money.png
+* img/pana.png
+* img/panamask.png
+* img/pumpmask.png
+* img/q1.png
+* img/q2.png
+* img/rom.png
+* img/team.png
+* img/ticketsell.png
+* img/ticketshow.png
+* img/waiting.png
+* lib/authen.dart
+* lib/create_account.dart
+* lib/customer_service.dart
+* lib/host_service.dart
+* lib/my_constant.dart
+* lib/widgets/show_img.dart
+
+
+Deleted files:
+
+
+Renamed files:
