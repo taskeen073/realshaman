@@ -33,5 +33,25 @@ class MyConstant {
   static Color ysp = Color(0xf9bf2d);
   static Color ysl = Color(0xfff163);
   static Color ysd = Color(0xc28f00);
+  static Color dark = Color(0xff575900);
+
+  TextStyle h1()=>TextStyle(
+    fontSize:24,
+    color:dark,
+    fontWeight: FontWeight.bold,
+
+  );
+  TextStyle h2()=>TextStyle(
+    fontSize:18,
+    color:dark,
+    fontWeight: FontWeight.w700,
+
+  );
+  TextStyle h3()=>TextStyle(
+    fontSize:14,
+    color:dark,
+    fontWeight: FontWeight.normal,
+
+  );
 
 }

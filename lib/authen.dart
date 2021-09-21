@@ -15,11 +15,19 @@ class _AuthenState extends State<Authen> {
     double size = MediaQuery.of(context).size.width;
     return Scaffold(
       body: SafeArea(
-        child: Container(
-          width: size*0.6,
-          child: ShowImaege(path: MyConstant.image18,),
-        )
+        child: ListView(
+        children:[ buildImg(size),
+      
+        ],
+      ),
      ),
-   );
+    );
+  }
+
+  Container buildImg(double size) {
+    return Container(
+        width: size*0.6,
+        child: ShowImaege(path: MyConstant.image18,),
+      );
   }
 }

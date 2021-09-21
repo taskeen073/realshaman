@@ -1,0 +1,17 @@
+-------------------- Auto-Git Log --------------------
+		Tue Sep 21 2021 14:43:46 GMT+0700 (Indochina Time)
+------------------------------------------------------
+
+Modified files:
+* lib/authen.dart
+* lib/my_constant.dart
+
+
+Created files:
+* .autogit/logs/log-21-8-2021-7-37-35.txt
+
+
+Deleted files:
+
+
+Renamed files:
