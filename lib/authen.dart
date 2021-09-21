@@ -28,12 +28,24 @@ class _AuthenState extends State<Authen> {
   }
 
   Row buildUser(double size) {
-    return Row(mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(width: size* 0.6,
-              child: TextFormField(decoration: InputDecoration(),)),
-            ],
-          );
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Container(
+            margin: EdgeInsets.only(top: 15),
+            width: size * 0.6,
+            child: TextFormField(
+              decoration: InputDecoration(
+                enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: MyConstant.dark),
+                    borderRadius: BorderRadius.circular(30)),
+                focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: MyConstant.yl),
+                    borderRadius: BorderRadius.circular(30)),
+              ),
+            )),
+      ],
+    );
   }
 
   Row buildAppName() {
