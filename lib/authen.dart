@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shaman/my_constant.dart';
 import 'package:shaman/widgets/show_img.dart';
+import 'package:shaman/widgets/show_title.dart';
 
 class Authen extends StatefulWidget {
   const Authen({Key? key}) : super(key: key);
@@ -16,18 +17,45 @@ class _AuthenState extends State<Authen> {
     return Scaffold(
       body: SafeArea(
         child: ListView(
-        children:[ buildImg(size),
-      
-        ],
+          children: [
+            buildImg(size),
+            buildAppName(),
+            buildUser(size),
+          ],
+        ),
       ),
-     ),
     );
   }
 
-  Container buildImg(double size) {
-    return Container(
-        width: size*0.6,
-        child: ShowImaege(path: MyConstant.image18,),
-      );
+  Row buildUser(double size) {
+    return Row(mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(width: size* 0.6,
+              child: TextFormField(decoration: InputDecoration(),)),
+            ],
+          );
+  }
+
+  Row buildAppName() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        ShowTitle(title: MyConstant.appName, textStyle: MyConstant().h1()),
+      ],
+    );
+  }
+
+  Row buildImg(double size) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Container(
+          width: size * 0.6,
+          child: ShowImaege(
+            path: MyConstant.image18,
+          ),
+        ),
+      ],
+    );
   }
 }
