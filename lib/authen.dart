@@ -43,12 +43,7 @@ class _AuthenState extends State<Authen> {
           margin: EdgeInsets.symmetric(vertical: 16),
           width: size * 0.6,
           child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                primary: MyConstant.dark,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30),
-                ),
-              ),
+              style: MyConstant().mybtstyle(),
               onPressed: () {},
               child: Text('login')),
         )

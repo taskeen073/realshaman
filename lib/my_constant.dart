@@ -35,24 +35,25 @@ class MyConstant {
   static Color ysd = Color(0xc28f00);
   static Color dark = Color(0xff575900);
 
-  TextStyle h1()=>TextStyle(
-    fontSize:24,
-    color:dark,
-    fontWeight: FontWeight.bold,
-
-  );
-  TextStyle h2()=>TextStyle(
-    fontSize:18,
-    color:dark,
-    fontWeight: FontWeight.w700,
-
-  );
-  TextStyle h3()=>TextStyle(
-    fontSize:14,
-    color:dark,
-    fontWeight: FontWeight.normal,
-
-  );
-  buttonStyle mybtstyle()=>
-
+  TextStyle h1() => TextStyle(
+        fontSize: 24,
+        color: dark,
+        fontWeight: FontWeight.bold,
+      );
+  TextStyle h2() => TextStyle(
+        fontSize: 18,
+        color: dark,
+        fontWeight: FontWeight.w700,
+      );
+  TextStyle h3() => TextStyle(
+        fontSize: 14,
+        color: dark,
+        fontWeight: FontWeight.normal,
+      );
+  ButtonStyle mybtstyle() => ElevatedButton.styleFrom(
+        primary: MyConstant.dark,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(30),
+        ),
+      );
 }
