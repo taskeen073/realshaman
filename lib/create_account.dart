@@ -10,16 +10,93 @@ class CreateAccount extends StatefulWidget {
 }
 
 class _CreateAccountState extends State<CreateAccount> {
+  String? typeUser;
+  Row buildName(double size) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Container(
+          margin: EdgeInsets.only(top: 16),
+          width: size * 0.6,
+          child: TextFormField(
+            decoration: InputDecoration(
+              labelStyle: MyConstant().h3(),
+              labelText: 'User: ',
+              prefixIcon:
+                  Icon(Icons.account_circle_outlined, color: MyConstant.dark),
+              enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: MyConstant.dark,
+                  ),
+                  borderRadius: BorderRadius.circular(30)),
+              focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: MyConstant.yl),
+                  borderRadius: BorderRadius.circular(30)),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
+    double size = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         title: Text('Create New Account'),
         backgroundColor: MyConstant.yp,
       ),
-      body: ShowTitle(
-        title: 'data normal',
+      body: ListView(
+        padding: EdgeInsets.all(16),
+        children: [
+          buildTitle1('normal'),
+          buildName(size),
+          buildTitle1('Type'),
+          buildRadioCustomer(),
+          buildRadioHost(),
+        ],
+      ),
+    );
+  }
+
+  RadioListTile<String> buildRadioHost() {
+    return RadioListTile(
+      value: 'Host',
+      groupValue: typeUser,
+      onChanged: (Value) {
+        setState(() {
+          typeUser = Value;
+        });
+      },
+      title: ShowTitle(
+        title: 'Host',
+        textStyle: MyConstant().h3(),
+      ),
+    );
+  }
+
+  RadioListTile<String> buildRadioCustomer() {
+    return RadioListTile(
+      value: 'customer',
+      groupValue: typeUser,
+      onChanged: (Value) {
+        setState(() {
+          typeUser = Value;
+        });
+      },
+      title: ShowTitle(
+        title: 'customer',
+        textStyle: MyConstant().h3(),
+      ),
+    );
+  }
+
+  Container buildTitle1(String title) {
+    return Container(
+      margin: EdgeInsets.symmetric(vertical: 16),
+      child: ShowTitle(
+        title: title,
         textStyle: MyConstant().h2(),
       ),
     );
