@@ -28,12 +28,23 @@ class _AuthenState extends State<Authen> {
               buildUser(size),
               buildPass(size),
               buildLogin(size),
+              buildTitle(),
             ],
           ),
         ),
       ),
     );
   }
+
+  Row buildTitle() {
+    return Row(mainAxisAlignment:MainAxisAlignment.center,
+              children: [
+                ShowTitle(title:'Non Account ?',textStyle: MyConstant().h3(),),
+             
+            TextButton(onPressed: (){}, child: Text('CreateAccount')) ],
+            );
+  }
+
 
   Row buildLogin(double size) {
     return Row(
