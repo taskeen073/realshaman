@@ -53,5 +53,6 @@ class MyConstant {
     fontWeight: FontWeight.normal,
 
   );
+  buttonStyle mybtstyle()=>
 
 }
