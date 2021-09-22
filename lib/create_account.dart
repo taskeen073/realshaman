@@ -53,42 +53,54 @@ class _CreateAccountState extends State<CreateAccount> {
           buildTitle1('normal'),
           buildName(size),
           buildTitle1('Type'),
-          buildRadioCustomer(),
-          buildRadioHost(),
+          buildRadioCustomer(size),
+          buildRadioHost(size),
         ],
       ),
     );
   }
 
-  RadioListTile<String> buildRadioHost() {
-    return RadioListTile(
-      value: 'Host',
-      groupValue: typeUser,
-      onChanged: (Value) {
-        setState(() {
-          typeUser = Value;
-        });
-      },
-      title: ShowTitle(
-        title: 'Host',
-        textStyle: MyConstant().h3(),
-      ),
+  Row buildRadioHost(double size) {
+    return Row(mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Container(width: size * 0.6,
+          child: RadioListTile(
+            value: 'Host',
+            groupValue: typeUser,
+            onChanged: (Value) {
+              setState(() {
+                typeUser = Value as String?;
+              });
+            },
+            title: ShowTitle(
+              title: 'Host',
+              textStyle: MyConstant().h3(),
+            ),
+          ),
+        ),
+      ],
     );
   }
 
-  RadioListTile<String> buildRadioCustomer() {
-    return RadioListTile(
-      value: 'customer',
-      groupValue: typeUser,
-      onChanged: (Value) {
-        setState(() {
-          typeUser = Value;
-        });
-      },
-      title: ShowTitle(
-        title: 'customer',
-        textStyle: MyConstant().h3(),
-      ),
+  Row  buildRadioCustomer(double size) {
+    return Row(mainAxisAlignment:MainAxisAlignment.center,
+      children: [
+        Container(width: size* 0.6,
+          child: RadioListTile(
+            value: 'customer',
+            groupValue: typeUser,
+            onChanged: (Value) {
+              setState(() {
+                typeUser = Value as String?;
+              });
+            },
+            title: ShowTitle(
+              title: 'customer',
+              textStyle: MyConstant().h3(),
+            ),
+          ),
+        ),
+      ],
     );
   }
 
