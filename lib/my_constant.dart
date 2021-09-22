@@ -4,9 +4,9 @@ class MyConstant {
   static String appName = "Shaman";
 
   static String routeAuthen = '/authen';
-  static String routeCreateAccount = 'createAccount';
-  static String routeHostService = 'hostService';
-  static String routeCustomerService = 'customeService';
+  static String routeCreateAccount = '/createAccount';
+  static String routeHostService = '/hostService';
+  static String routeCustomerService = '/customeService';
 
   static String image1 = 'img/meet.png';
   static String imageq2 = 'img/rom.png';
