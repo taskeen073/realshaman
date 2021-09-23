@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shaman/my_constant.dart';
+import 'package:shaman/widgets/show_img.dart';
 import 'package:shaman/widgets/show_title.dart';
 
 class CreateAccount extends StatefulWidget {
@@ -28,6 +29,7 @@ class _CreateAccountState extends State<CreateAccount> {
         child: ListView(
           padding: EdgeInsets.all(16),
           children: [
+            buildImg(size),
             buildTitle1('ข้อมูลทั่วไป'),
             buildUserName(size),
             buildPassWord(size),
@@ -433,6 +435,20 @@ class _CreateAccountState extends State<CreateAccount> {
               title: 'Female',
               textStyle: MyConstant().h3(),
             ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Row buildImg(double size) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Container(
+          width: size * 0.3,
+          child: ShowImaege(
+            path: MyConstant.image19,
           ),
         ),
       ],
