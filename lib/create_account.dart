@@ -11,6 +11,8 @@ class CreateAccount extends StatefulWidget {
 
 class _CreateAccountState extends State<CreateAccount> {
   String? typeUser;
+  bool statusRedEye = true;
+  String? typeSex;
 
   @override
   Widget build(BuildContext context) {
@@ -27,6 +29,8 @@ class _CreateAccountState extends State<CreateAccount> {
           padding: EdgeInsets.all(16),
           children: [
             buildTitle1('ข้อมูลทั่วไป'),
+            buildUserName(size),
+            buildPassWord(size),
             buildName(size),
             buildTitle1('Type'),
             buildRadioCustomer(size),
@@ -37,10 +41,9 @@ class _CreateAccountState extends State<CreateAccount> {
             buildBirthDay(size),
             buildEmail(size),
             buildPhone(size),
-            buildPhone(size),
-            buildSex(size),
-            buildUserName(size),
-            buildPassWord(size),
+            buildTitle1('Sex'),
+            buildRadioMale(size),
+            buildRadioFemale(size),
             buildLogin(size)
           ],
         ),
@@ -143,13 +146,10 @@ class _CreateAccountState extends State<CreateAccount> {
           width: size * 0.6,
           child: TextFormField(
             decoration: InputDecoration(
-              hintText: 'Name :',
-              hintStyle: MyConstant().h3(),
-              prefixIcon: Padding(
-                padding: const EdgeInsets.fromLTRB(0, 0, 0, 60),
-                child:
-                    Icon(Icons.account_circle_outlined, color: MyConstant.dark),
-              ),
+              labelStyle: MyConstant().h3(),
+              labelText: 'Name: ',
+              prefixIcon:
+                  Icon(Icons.account_circle_outlined, color: MyConstant.dark),
               enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
                     color: MyConstant.dark,
@@ -202,13 +202,10 @@ class _CreateAccountState extends State<CreateAccount> {
           width: size * 0.6,
           child: TextFormField(
             decoration: InputDecoration(
-              hintText: 'Email :',
-              hintStyle: MyConstant().h3(),
-              prefixIcon: Padding(
-                padding: const EdgeInsets.fromLTRB(0, 0, 0, 60),
-                child:
-                    Icon(Icons.account_circle_outlined, color: MyConstant.dark),
-              ),
+              labelStyle: MyConstant().h3(),
+              labelText: 'Email: ',
+              prefixIcon:
+                  Icon(Icons.account_circle_outlined, color: MyConstant.dark),
               enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
                     color: MyConstant.dark,
@@ -233,13 +230,104 @@ class _CreateAccountState extends State<CreateAccount> {
           width: size * 0.6,
           child: TextFormField(
             decoration: InputDecoration(
-              hintText: 'Phone :',
-              hintStyle: MyConstant().h3(),
-              prefixIcon: Padding(
-                padding: const EdgeInsets.fromLTRB(0, 0, 0, 60),
-                child:
-                    Icon(Icons.account_circle_outlined, color: MyConstant.dark),
-              ),
+              labelStyle: MyConstant().h3(),
+              labelText: 'Phone: ',
+              prefixIcon:
+                  Icon(Icons.account_circle_outlined, color: MyConstant.dark),
+              enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: MyConstant.dark,
+                  ),
+                  borderRadius: BorderRadius.circular(30)),
+              focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: MyConstant.yl),
+                  borderRadius: BorderRadius.circular(30)),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Row buildReligion(double size) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Container(
+          margin: EdgeInsets.only(top: 16),
+          width: size * 0.6,
+          child: TextFormField(
+            decoration: InputDecoration(
+              labelStyle: MyConstant().h3(),
+              labelText: 'Religion: ',
+              prefixIcon:
+                  Icon(Icons.account_circle_outlined, color: MyConstant.dark),
+              enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: MyConstant.dark,
+                  ),
+                  borderRadius: BorderRadius.circular(30)),
+              focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: MyConstant.yl),
+                  borderRadius: BorderRadius.circular(30)),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Row buildBirthDay(double size) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Container(
+          margin: EdgeInsets.only(top: 16),
+          width: size * 0.6,
+          child: TextFormField(
+            decoration: InputDecoration(
+              labelStyle: MyConstant().h3(),
+              labelText: 'BirthDay: ',
+              prefixIcon:
+                  Icon(Icons.account_circle_outlined, color: MyConstant.dark),
+              enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: MyConstant.dark,
+                  ),
+                  borderRadius: BorderRadius.circular(30)),
+              focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: MyConstant.yl),
+                  borderRadius: BorderRadius.circular(30)),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Row buildPassWord(double size) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Container(
+          margin: EdgeInsets.only(top: 16),
+          width: size * 0.6,
+          child: TextFormField(
+            obscureText: statusRedEye,
+            decoration: InputDecoration(
+              suffixIcon: IconButton(
+                  onPressed: () {
+                    setState(() {
+                      statusRedEye = !statusRedEye;
+                    });
+                  },
+                  icon: statusRedEye
+                      ? Icon(Icons.remove_red_eye, color: MyConstant.dark)
+                      : Icon(Icons.remove_red_eye_outlined,
+                          color: MyConstant.dark)),
+              labelStyle: MyConstant().h3(),
+              labelText: 'Password: ',
+              prefixIcon: Icon(Icons.lock_outline, color: MyConstant.dark),
               enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
                     color: MyConstant.dark,
@@ -287,130 +375,6 @@ class _CreateAccountState extends State<CreateAccount> {
     );
   }
 
-  Row buildBirthDay(double size) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Container(
-          margin: EdgeInsets.only(top: 16),
-          width: size * 0.6,
-          child: TextFormField(
-            decoration: InputDecoration(
-              hintText: 'BirthDay :',
-              hintStyle: MyConstant().h3(),
-              prefixIcon: Padding(
-                padding: const EdgeInsets.fromLTRB(0, 0, 0, 60),
-                child:
-                    Icon(Icons.account_circle_outlined, color: MyConstant.dark),
-              ),
-              enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: MyConstant.dark,
-                  ),
-                  borderRadius: BorderRadius.circular(30)),
-              focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: MyConstant.yl),
-                  borderRadius: BorderRadius.circular(30)),
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-
-  Row buildReligion(double size) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Container(
-          margin: EdgeInsets.only(top: 16),
-          width: size * 0.6,
-          child: TextFormField(
-            decoration: InputDecoration(
-              hintText: 'Religion :',
-              hintStyle: MyConstant().h3(),
-              prefixIcon: Padding(
-                padding: const EdgeInsets.fromLTRB(0, 0, 0, 60),
-                child:
-                    Icon(Icons.account_circle_outlined, color: MyConstant.dark),
-              ),
-              enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: MyConstant.dark,
-                  ),
-                  borderRadius: BorderRadius.circular(30)),
-              focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: MyConstant.yl),
-                  borderRadius: BorderRadius.circular(30)),
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-
-  Row buildSex(double size) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Container(
-          margin: EdgeInsets.only(top: 16),
-          width: size * 0.6,
-          child: TextFormField(
-            decoration: InputDecoration(
-              hintText: 'Sex :',
-              hintStyle: MyConstant().h3(),
-              prefixIcon: Padding(
-                padding: const EdgeInsets.fromLTRB(0, 0, 0, 60),
-                child:
-                    Icon(Icons.account_circle_outlined, color: MyConstant.dark),
-              ),
-              enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: MyConstant.dark,
-                  ),
-                  borderRadius: BorderRadius.circular(30)),
-              focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: MyConstant.yl),
-                  borderRadius: BorderRadius.circular(30)),
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-
-  Row buildPassWord(double size) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Container(
-          margin: EdgeInsets.only(top: 16),
-          width: size * 0.6,
-          child: TextFormField(
-            decoration: InputDecoration(
-              hintText: 'PassWord :',
-              hintStyle: MyConstant().h3(),
-              prefixIcon: Padding(
-                padding: const EdgeInsets.fromLTRB(0, 0, 0, 60),
-                child:
-                    Icon(Icons.account_circle_outlined, color: MyConstant.dark),
-              ),
-              enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: MyConstant.dark,
-                  ),
-                  borderRadius: BorderRadius.circular(30)),
-              focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: MyConstant.yl),
-                  borderRadius: BorderRadius.circular(30)),
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-
   Row buildLogin(double size) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -423,6 +387,54 @@ class _CreateAccountState extends State<CreateAccount> {
               onPressed: () {},
               child: Text('login')),
         )
+      ],
+    );
+  }
+
+  Row buildRadioMale(double size) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Container(
+          width: size * 0.6,
+          child: RadioListTile(
+            value: 'Male',
+            groupValue: typeSex,
+            onChanged: (Value) {
+              setState(() {
+                typeSex = Value as String?;
+              });
+            },
+            title: ShowTitle(
+              title: 'Male',
+              textStyle: MyConstant().h3(),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Row buildRadioFemale(double size) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Container(
+          width: size * 0.6,
+          child: RadioListTile(
+            value: 'Female',
+            groupValue: typeSex,
+            onChanged: (Value) {
+              setState(() {
+                typeSex = Value as String?;
+              });
+            },
+            title: ShowTitle(
+              title: 'Female',
+              textStyle: MyConstant().h3(),
+            ),
+          ),
+        ),
       ],
     );
   }
