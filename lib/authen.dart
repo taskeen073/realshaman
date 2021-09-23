@@ -62,7 +62,7 @@ class _AuthenState extends State<Authen> {
           child: ElevatedButton(
               style: MyConstant().mybtstyle(),
               onPressed: () {},
-              child: Text('login')),
+              child: Text('LOGIN')),
         )
       ],
     );

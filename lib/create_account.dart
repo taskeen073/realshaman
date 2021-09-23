@@ -46,7 +46,7 @@ class _CreateAccountState extends State<CreateAccount> {
             buildTitle1('Sex'),
             buildRadioMale(size),
             buildRadioFemale(size),
-            buildLogin(size)
+            buildRegister(size)
           ],
         ),
       ),
@@ -377,7 +377,7 @@ class _CreateAccountState extends State<CreateAccount> {
     );
   }
 
-  Row buildLogin(double size) {
+  Row buildRegister(double size) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -387,7 +387,7 @@ class _CreateAccountState extends State<CreateAccount> {
           child: ElevatedButton(
               style: MyConstant().mybtstyle(),
               onPressed: () {},
-              child: Text('login')),
+              child: Text('REGISTER')),
         )
       ],
     );
