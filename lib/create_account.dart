@@ -11,7 +11,7 @@ class CreateAccount extends StatefulWidget {
 
 class _CreateAccountState extends State<CreateAccount> {
   String? typeUser;
-  
+
   @override
   Widget build(BuildContext context) {
     double size = MediaQuery.of(context).size.width;
@@ -20,23 +20,33 @@ class _CreateAccountState extends State<CreateAccount> {
         title: Text('Create New Account'),
         backgroundColor: MyConstant.yp,
       ),
-      body: ListView(
-        padding: EdgeInsets.all(16),
-        children: [
-          buildTitle1('normal'),
-          buildName(size),
-          buildTitle1('Type'),
-          buildRadioCustomer(size),
-          buildRadioHost(size),
-        ],
+      body: GestureDetector(
+        onTap: () => FocusScope.of(context).requestFocus(FocusNode()),
+        behavior: HitTestBehavior.opaque,
+        child: ListView(
+          padding: EdgeInsets.all(16),
+          children: [
+            buildTitle1('ข้อมูลทั่วไป'),
+            buildUserName(size),
+            buildTitle1('Type'),
+            buildRadioCustomer(size),
+            buildRadioHost(size),
+            buildTitle1('ข้อมูลพื้นฐาน'),
+            buildName(size),
+            buildLastName(size),
+            buildLogin(size)
+          ],
+        ),
       ),
     );
   }
 
   Row buildRadioHost(double size) {
-    return Row(mainAxisAlignment: MainAxisAlignment.center,
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Container(width: size * 0.6,
+        Container(
+          width: size * 0.6,
           child: RadioListTile(
             value: 'Host',
             groupValue: typeUser,
@@ -55,10 +65,12 @@ class _CreateAccountState extends State<CreateAccount> {
     );
   }
 
-  Row  buildRadioCustomer(double size) {
-    return Row(mainAxisAlignment:MainAxisAlignment.center,
+  Row buildRadioCustomer(double size) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Container(width: size* 0.6,
+        Container(
+          width: size * 0.6,
           child: RadioListTile(
             value: 'customer',
             groupValue: typeUser,
@@ -86,7 +98,8 @@ class _CreateAccountState extends State<CreateAccount> {
       ),
     );
   }
-  Row buildName(double size) {
+
+  Row buildUserName(double size) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -96,7 +109,7 @@ class _CreateAccountState extends State<CreateAccount> {
           child: TextFormField(
             decoration: InputDecoration(
               labelStyle: MyConstant().h3(),
-              labelText: 'User: ',
+              labelText: 'UserName: ',
               prefixIcon:
                   Icon(Icons.account_circle_outlined, color: MyConstant.dark),
               enabledBorder: OutlineInputBorder(
@@ -114,4 +127,79 @@ class _CreateAccountState extends State<CreateAccount> {
     );
   }
 
+  Row buildName(double size) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Container(
+          margin: EdgeInsets.only(top: 16),
+          width: size * 0.6,
+          child: TextFormField(
+            maxLines: 3,
+            decoration: InputDecoration(
+              hintText: 'Name :',
+              hintStyle:MyConstant().h3(),
+              prefixIcon:
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 0, 0, 60),
+                    child: Icon(Icons.account_circle_outlined, color: MyConstant.dark),
+                  ),
+              enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: MyConstant.dark,
+                  ),
+                  borderRadius: BorderRadius.circular(30)),
+              focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: MyConstant.yl),
+                  borderRadius: BorderRadius.circular(30)),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Row buildLastName(double size) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Container(
+          margin: EdgeInsets.only(top: 16),
+          width: size * 0.6,
+          child: TextFormField(
+            decoration: InputDecoration(
+              labelStyle: MyConstant().h3(),
+              labelText: 'LastName: ',
+              prefixIcon:
+                  Icon(Icons.account_circle_outlined, color: MyConstant.dark),
+              enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: MyConstant.dark,
+                  ),
+                  borderRadius: BorderRadius.circular(30)),
+              focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: MyConstant.yl),
+                  borderRadius: BorderRadius.circular(30)),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Row buildLogin(double size) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Container(
+          margin: EdgeInsets.symmetric(vertical: 16),
+          width: size * 0.6,
+          child: ElevatedButton(
+              style: MyConstant().mybtstyle(),
+              onPressed: () {},
+              child: Text('login')),
+        )
+      ],
+    );
+  }
 }
