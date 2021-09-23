@@ -27,13 +27,20 @@ class _CreateAccountState extends State<CreateAccount> {
           padding: EdgeInsets.all(16),
           children: [
             buildTitle1('ข้อมูลทั่วไป'),
-            buildUserName(size),
+            buildName(size),
             buildTitle1('Type'),
             buildRadioCustomer(size),
             buildRadioHost(size),
             buildTitle1('ข้อมูลพื้นฐาน'),
-            buildName(size),
             buildLastName(size),
+            buildAddress(size),
+            buildBirthDay(size),
+            buildEmail(size),
+            buildPhone(size),
+            buildPhone(size),
+            buildSex(size),
+            buildUserName(size),
+            buildPassWord(size),
             buildLogin(size)
           ],
         ),
@@ -135,15 +142,14 @@ class _CreateAccountState extends State<CreateAccount> {
           margin: EdgeInsets.only(top: 16),
           width: size * 0.6,
           child: TextFormField(
-            maxLines: 3,
             decoration: InputDecoration(
               hintText: 'Name :',
-              hintStyle:MyConstant().h3(),
-              prefixIcon:
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(0, 0, 0, 60),
-                    child: Icon(Icons.account_circle_outlined, color: MyConstant.dark),
-                  ),
+              hintStyle: MyConstant().h3(),
+              prefixIcon: Padding(
+                padding: const EdgeInsets.fromLTRB(0, 0, 0, 60),
+                child:
+                    Icon(Icons.account_circle_outlined, color: MyConstant.dark),
+              ),
               enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
                     color: MyConstant.dark,
@@ -172,6 +178,224 @@ class _CreateAccountState extends State<CreateAccount> {
               labelText: 'LastName: ',
               prefixIcon:
                   Icon(Icons.account_circle_outlined, color: MyConstant.dark),
+              enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: MyConstant.dark,
+                  ),
+                  borderRadius: BorderRadius.circular(30)),
+              focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: MyConstant.yl),
+                  borderRadius: BorderRadius.circular(30)),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Row buildEmail(double size) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Container(
+          margin: EdgeInsets.only(top: 16),
+          width: size * 0.6,
+          child: TextFormField(
+            decoration: InputDecoration(
+              hintText: 'Email :',
+              hintStyle: MyConstant().h3(),
+              prefixIcon: Padding(
+                padding: const EdgeInsets.fromLTRB(0, 0, 0, 60),
+                child:
+                    Icon(Icons.account_circle_outlined, color: MyConstant.dark),
+              ),
+              enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: MyConstant.dark,
+                  ),
+                  borderRadius: BorderRadius.circular(30)),
+              focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: MyConstant.yl),
+                  borderRadius: BorderRadius.circular(30)),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Row buildPhone(double size) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Container(
+          margin: EdgeInsets.only(top: 16),
+          width: size * 0.6,
+          child: TextFormField(
+            decoration: InputDecoration(
+              hintText: 'Phone :',
+              hintStyle: MyConstant().h3(),
+              prefixIcon: Padding(
+                padding: const EdgeInsets.fromLTRB(0, 0, 0, 60),
+                child:
+                    Icon(Icons.account_circle_outlined, color: MyConstant.dark),
+              ),
+              enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: MyConstant.dark,
+                  ),
+                  borderRadius: BorderRadius.circular(30)),
+              focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: MyConstant.yl),
+                  borderRadius: BorderRadius.circular(30)),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Row buildAddress(double size) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Container(
+          margin: EdgeInsets.only(top: 16),
+          width: size * 0.6,
+          child: TextFormField(
+            maxLines: 3,
+            decoration: InputDecoration(
+              hintText: 'Address :',
+              hintStyle: MyConstant().h3(),
+              prefixIcon: Padding(
+                padding: const EdgeInsets.fromLTRB(0, 0, 0, 60),
+                child:
+                    Icon(Icons.account_circle_outlined, color: MyConstant.dark),
+              ),
+              enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: MyConstant.dark,
+                  ),
+                  borderRadius: BorderRadius.circular(30)),
+              focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: MyConstant.yl),
+                  borderRadius: BorderRadius.circular(30)),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Row buildBirthDay(double size) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Container(
+          margin: EdgeInsets.only(top: 16),
+          width: size * 0.6,
+          child: TextFormField(
+            decoration: InputDecoration(
+              hintText: 'BirthDay :',
+              hintStyle: MyConstant().h3(),
+              prefixIcon: Padding(
+                padding: const EdgeInsets.fromLTRB(0, 0, 0, 60),
+                child:
+                    Icon(Icons.account_circle_outlined, color: MyConstant.dark),
+              ),
+              enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: MyConstant.dark,
+                  ),
+                  borderRadius: BorderRadius.circular(30)),
+              focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: MyConstant.yl),
+                  borderRadius: BorderRadius.circular(30)),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Row buildReligion(double size) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Container(
+          margin: EdgeInsets.only(top: 16),
+          width: size * 0.6,
+          child: TextFormField(
+            decoration: InputDecoration(
+              hintText: 'Religion :',
+              hintStyle: MyConstant().h3(),
+              prefixIcon: Padding(
+                padding: const EdgeInsets.fromLTRB(0, 0, 0, 60),
+                child:
+                    Icon(Icons.account_circle_outlined, color: MyConstant.dark),
+              ),
+              enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: MyConstant.dark,
+                  ),
+                  borderRadius: BorderRadius.circular(30)),
+              focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: MyConstant.yl),
+                  borderRadius: BorderRadius.circular(30)),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Row buildSex(double size) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Container(
+          margin: EdgeInsets.only(top: 16),
+          width: size * 0.6,
+          child: TextFormField(
+            decoration: InputDecoration(
+              hintText: 'Sex :',
+              hintStyle: MyConstant().h3(),
+              prefixIcon: Padding(
+                padding: const EdgeInsets.fromLTRB(0, 0, 0, 60),
+                child:
+                    Icon(Icons.account_circle_outlined, color: MyConstant.dark),
+              ),
+              enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: MyConstant.dark,
+                  ),
+                  borderRadius: BorderRadius.circular(30)),
+              focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: MyConstant.yl),
+                  borderRadius: BorderRadius.circular(30)),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Row buildPassWord(double size) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Container(
+          margin: EdgeInsets.only(top: 16),
+          width: size * 0.6,
+          child: TextFormField(
+            decoration: InputDecoration(
+              hintText: 'PassWord :',
+              hintStyle: MyConstant().h3(),
+              prefixIcon: Padding(
+                padding: const EdgeInsets.fromLTRB(0, 0, 0, 60),
+                child:
+                    Icon(Icons.account_circle_outlined, color: MyConstant.dark),
+              ),
               enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
                     color: MyConstant.dark,
