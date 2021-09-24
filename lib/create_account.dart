@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shaman/my_constant.dart';
 import 'package:shaman/widgets/show_img.dart';
 import 'package:shaman/widgets/show_title.dart';
+import 'package:date_field/date_field.dart';
 
 class CreateAccount extends StatefulWidget {
   const CreateAccount({Key? key}) : super(key: key);
@@ -14,6 +15,7 @@ class _CreateAccountState extends State<CreateAccount> {
   String? typeUser;
   bool statusRedEye = true;
   String? typeSex;
+  DateTime? selectedDate;
 
   @override
   Widget build(BuildContext context) {
@@ -279,33 +281,7 @@ class _CreateAccountState extends State<CreateAccount> {
     );
   }
 
-  Row buildBirthDay(double size) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Container(
-          margin: EdgeInsets.only(top: 16),
-          width: size * 0.6,
-          child: TextFormField(
-            decoration: InputDecoration(
-              labelStyle: MyConstant().h3(),
-              labelText: 'BirthDay: ',
-              prefixIcon:
-                  Icon(Icons.account_circle_outlined, color: MyConstant.dark),
-              enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: MyConstant.dark,
-                  ),
-                  borderRadius: BorderRadius.circular(30)),
-              focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: MyConstant.yl),
-                  borderRadius: BorderRadius.circular(30)),
-            ),
-          ),
-        ),
-      ],
-    );
-  }
+  Widget buildBirthDay
 
   Row buildPassWord(double size) {
     return Row(
