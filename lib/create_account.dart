@@ -1,8 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shaman/my_constant.dart';
 import 'package:shaman/widgets/show_img.dart';
 import 'package:shaman/widgets/show_title.dart';
-import 'package:date_field/date_field.dart';
 
 class CreateAccount extends StatefulWidget {
   const CreateAccount({Key? key}) : super(key: key);
@@ -15,7 +15,6 @@ class _CreateAccountState extends State<CreateAccount> {
   String? typeUser;
   bool statusRedEye = true;
   String? typeSex;
-  DateTime? selectedDate;
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +41,7 @@ class _CreateAccountState extends State<CreateAccount> {
             buildTitle1('ข้อมูลพื้นฐาน'),
             buildLastName(size),
             buildAddress(size),
-            buildBirthDay(size),
+            buildBirthday(),
             buildEmail(size),
             buildPhone(size),
             buildTitle1('Sex'),
@@ -281,7 +280,18 @@ class _CreateAccountState extends State<CreateAccount> {
     );
   }
 
-  Widget buildBirthDay
+  Container buildBirthday() {
+    return Container(
+      height: 200,
+      child: CupertinoDatePicker(
+        mode: CupertinoDatePickerMode.date,
+        initialDateTime: DateTime(1969, 1, 1),
+        onDateTimeChanged: (DateTime newDateTime) {
+          // Do something
+        },
+      ),
+    );
+  }
 
   Row buildPassWord(double size) {
     return Row(
