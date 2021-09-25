@@ -1,0 +1,19 @@
+-------------------- Auto-Git Log --------------------
+		Sat Sep 25 2021 14:54:16 GMT+0700 (Indochina Time)
+------------------------------------------------------
+
+Modified files:
+* ios/Flutter/Debug.xcconfig
+* ios/Flutter/Release.xcconfig
+* pubspec.lock
+* pubspec.yaml
+
+
+Created files:
+* ios/Podfile
+
+
+Deleted files:
+
+
+Renamed files:
