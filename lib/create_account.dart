@@ -15,7 +15,7 @@ class _CreateAccountState extends State<CreateAccount> {
   String? typeUser;
   bool statusRedEye = true;
   String? typeSex;
-
+  String? name,lastname,username,password,choosetype;
   @override
   Widget build(BuildContext context) {
     double size = MediaQuery.of(context).size.width;
