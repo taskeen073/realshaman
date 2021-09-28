@@ -1,0 +1,16 @@
+-------------------- Auto-Git Log --------------------
+		Tue Sep 28 2021 23:09:26 GMT+0700 (Indochina Time)
+------------------------------------------------------
+
+Modified files:
+* lib/create_account.dart
+
+
+Created files:
+* .autogit/logs/log-28-8-2021-21-31-29.txt
+
+
+Deleted files:
+
+
+Renamed files:

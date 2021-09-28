@@ -17,7 +17,7 @@ class _CreateAccountState extends State<CreateAccount> {
   String? typeSex;
 
   String? name, lastname, username, password, choosetype;
-  final fromKey = GlobalKey<FormState>();
+  final formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     double size = MediaQuery.of(context).size.width;
@@ -29,28 +29,30 @@ class _CreateAccountState extends State<CreateAccount> {
       body: GestureDetector(
         onTap: () => FocusScope.of(context).requestFocus(FocusNode()),
         behavior: HitTestBehavior.opaque,
-        child: ListView(
-          padding: EdgeInsets.all(16),
-          children: [
-            buildImg(size),
-            buildTitle1('ข้อมูลทั่วไป'),
-            buildUserName(size),
-            buildPassWord(size),
-            buildName(size),
-            buildTitle1('Type'),
-            buildRadioCustomer(size),
-            buildRadioHost(size),
-            buildTitle1('ข้อมูลพื้นฐาน'),
-            buildLastName(size),
-            buildAddress(size),
-            buildBirthday(),
-            buildEmail(size),
-            buildPhone(size),
-            buildTitle1('Sex'),
-            buildRadioMale(size),
-            buildRadioFemale(size),
-            buildRegister(size)
-          ],
+        child: Form(key: formKey,
+          child: ListView(
+            padding: EdgeInsets.all(16),
+            children: [
+              buildImg(size),
+              buildTitle1('ข้อมูลทั่วไป'),
+              buildUserName(size),
+              buildPassWord(size),
+              buildName(size),
+              buildTitle1('Type'),
+              buildRadioCustomer(size),
+              buildRadioHost(size),
+              buildTitle1('ข้อมูลพื้นฐาน'),
+              buildLastName(size),
+              buildAddress(size),
+              buildBirthday(),
+              buildEmail(size),
+              buildPhone(size),
+              buildTitle1('Sex'),
+              buildRadioMale(size),
+              buildRadioFemale(size),
+              buildRegister(size)
+            ],
+          ),
         ),
       ),
     );
