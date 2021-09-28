@@ -1,0 +1,18 @@
+-------------------- Auto-Git Log --------------------
+		Wed Sep 29 2021 01:56:11 GMT+0700 (Indochina Time)
+------------------------------------------------------
+
+Modified files:
+* lib/create_account.dart
+* pubspec.lock
+* pubspec.yaml
+
+
+Created files:
+* .autogit/logs/log-29-8-2021-0-28-25.txt
+
+
+Deleted files:
+
+
+Renamed files:
