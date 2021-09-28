@@ -16,16 +16,7 @@ class _CreateAccountState extends State<CreateAccount> {
   bool statusRedEye = true;
   String? typeSex;
 
-  String? name,
-      lastname,
-      username,
-      password,
-      choosetype,
-      birthday,
-      phone,
-      address,
-      email,
-      sex;
+  String? name, lastname, username, password, birthday, phone, address, email;
   final formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
@@ -141,7 +132,7 @@ class _CreateAccountState extends State<CreateAccount> {
         Container(
           margin: EdgeInsets.only(top: 16),
           width: size * 0.6,
-          child: TextFormField(
+          child: TextFormField(key: Key("username"),
             validator: (value) {
               if (value!.isEmpty) {
                 return 'Please enter User Name';
@@ -150,6 +141,9 @@ class _CreateAccountState extends State<CreateAccount> {
             decoration: InputDecoration(
               labelStyle: MyConstant().h3(),
               labelText: 'UserName: ',
+                          keyboardType: TextInputType.text,
+                          onSaved: (String value) {
+                            _username = value;,
               prefixIcon:
                   Icon(Icons.account_circle_outlined, color: MyConstant.dark),
               enabledBorder: OutlineInputBorder(
@@ -434,7 +428,18 @@ class _CreateAccountState extends State<CreateAccount> {
           width: size * 0.6,
           child: ElevatedButton(
               style: MyConstant().mybtstyle(),
-              onPressed: () {},
+              onPressed: () {
+                print(
+                    'Username =$username ,password = $password , name = $name , lastname = $lastname , email = $email , birthday = $birthday, type = $typeUser , sex = $typeSex');
+                if (username == null ||
+                    password == null ||
+                    name == null ||
+                    lastname == null ||
+                    email == null) {
+                  print('Have Spece');
+                } else if(typeUser == null || typeSex == null){
+                }
+              },
               child: Text('REGISTER')),
         )
       ],
