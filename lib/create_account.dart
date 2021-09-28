@@ -16,13 +16,30 @@ class _CreateAccountState extends State<CreateAccount> {
   bool statusRedEye = true;
   String? typeSex;
 
-  String? name, lastname, username, password, choosetype;
+  String? name,
+      lastname,
+      username,
+      password,
+      choosetype,
+      birthday,
+      phone,
+      address,
+      email,
+      sex;
   final formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     double size = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
+        actions: [
+          IconButton(
+            onPressed: () {
+              if (formKey.currentState!.validate()) {}
+            },
+            icon: Icon(Icons.cloud_upload),
+          )
+        ],
         title: Text('Create New Account'),
         backgroundColor: MyConstant.yp,
       ),
@@ -224,6 +241,11 @@ class _CreateAccountState extends State<CreateAccount> {
           margin: EdgeInsets.only(top: 16),
           width: size * 0.6,
           child: TextFormField(
+            validator: (value) {
+              if (value!.isEmpty) {
+                return 'Please enter Email';
+              } else {}
+            },
             decoration: InputDecoration(
               labelStyle: MyConstant().h3(),
               labelText: 'Email: ',
@@ -252,6 +274,11 @@ class _CreateAccountState extends State<CreateAccount> {
           margin: EdgeInsets.only(top: 16),
           width: size * 0.6,
           child: TextFormField(
+            validator: (value) {
+              if (value!.isEmpty) {
+                return 'Please enter Your phone number';
+              } else {}
+            },
             decoration: InputDecoration(
               labelStyle: MyConstant().h3(),
               labelText: 'Phone: ',
@@ -280,6 +307,11 @@ class _CreateAccountState extends State<CreateAccount> {
           margin: EdgeInsets.only(top: 16),
           width: size * 0.6,
           child: TextFormField(
+            validator: (value) {
+              if (value!.isEmpty) {
+                return 'Please enter Your Religion';
+              } else {}
+            },
             decoration: InputDecoration(
               labelStyle: MyConstant().h3(),
               labelText: 'Religion: ',
@@ -321,6 +353,11 @@ class _CreateAccountState extends State<CreateAccount> {
           margin: EdgeInsets.only(top: 16),
           width: size * 0.6,
           child: TextFormField(
+            validator: (value) {
+              if (value!.isEmpty) {
+                return 'Please enter Your Password';
+              } else {}
+            },
             obscureText: statusRedEye,
             decoration: InputDecoration(
               suffixIcon: IconButton(
@@ -359,6 +396,11 @@ class _CreateAccountState extends State<CreateAccount> {
           margin: EdgeInsets.only(top: 16),
           width: size * 0.6,
           child: TextFormField(
+            validator: (value) {
+              if (value!.isEmpty) {
+                return 'Please enter Your Address';
+              } else {}
+            },
             maxLines: 3,
             decoration: InputDecoration(
               hintText: 'Address :',
