@@ -1,0 +1,17 @@
+-------------------- Auto-Git Log --------------------
+		Wed Sep 29 2021 05:03:32 GMT+0700 (Indochina Time)
+------------------------------------------------------
+
+Modified files:
+* ios/Podfile.lock
+* lib/create_account.dart
+
+
+Created files:
+* .autogit/logs/log-29-8-2021-2-26-22.txt
+
+
+Deleted files:
+
+
+Renamed files:

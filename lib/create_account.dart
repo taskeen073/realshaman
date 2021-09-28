@@ -132,7 +132,8 @@ class _CreateAccountState extends State<CreateAccount> {
         Container(
           margin: EdgeInsets.only(top: 16),
           width: size * 0.6,
-          child: TextFormField(key: Key("username"),
+          child: TextFormField(
+            key: Key("username"),
             validator: (value) {
               if (value!.isEmpty) {
                 return 'Please enter User Name';
@@ -141,9 +142,6 @@ class _CreateAccountState extends State<CreateAccount> {
             decoration: InputDecoration(
               labelStyle: MyConstant().h3(),
               labelText: 'UserName: ',
-                          keyboardType: TextInputType.text,
-                          onSaved: (String value) {
-                            _username = value;,
               prefixIcon:
                   Icon(Icons.account_circle_outlined, color: MyConstant.dark),
               enabledBorder: OutlineInputBorder(
@@ -437,8 +435,7 @@ class _CreateAccountState extends State<CreateAccount> {
                     lastname == null ||
                     email == null) {
                   print('Have Spece');
-                } else if(typeUser == null || typeSex == null){
-                }
+                } else if (typeUser == null || typeSex == null) {}
               },
               child: Text('REGISTER')),
         )
