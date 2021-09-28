@@ -29,7 +29,8 @@ class _CreateAccountState extends State<CreateAccount> {
       body: GestureDetector(
         onTap: () => FocusScope.of(context).requestFocus(FocusNode()),
         behavior: HitTestBehavior.opaque,
-        child: Form(key: formKey,
+        child: Form(
+          key: formKey,
           child: ListView(
             padding: EdgeInsets.all(16),
             children: [
@@ -124,6 +125,11 @@ class _CreateAccountState extends State<CreateAccount> {
           margin: EdgeInsets.only(top: 16),
           width: size * 0.6,
           child: TextFormField(
+            validator: (value) {
+              if (value!.isEmpty) {
+                return 'Please enter User Name';
+              } else {}
+            },
             decoration: InputDecoration(
               labelStyle: MyConstant().h3(),
               labelText: 'UserName: ',
@@ -152,6 +158,11 @@ class _CreateAccountState extends State<CreateAccount> {
           margin: EdgeInsets.only(top: 16),
           width: size * 0.6,
           child: TextFormField(
+            validator: (value) {
+              if (value!.isEmpty) {
+                return 'Please enter Name';
+              } else {}
+            },
             decoration: InputDecoration(
               labelStyle: MyConstant().h3(),
               labelText: 'Name: ',
@@ -180,6 +191,11 @@ class _CreateAccountState extends State<CreateAccount> {
           margin: EdgeInsets.only(top: 16),
           width: size * 0.6,
           child: TextFormField(
+            validator: (value) {
+              if (value!.isEmpty) {
+                return 'Please enter Last Name';
+              } else {}
+            },
             decoration: InputDecoration(
               labelStyle: MyConstant().h3(),
               labelText: 'LastName: ',
