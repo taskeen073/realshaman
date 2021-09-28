@@ -15,6 +15,7 @@ class _CreateAccountState extends State<CreateAccount> {
   String? typeUser;
   bool statusRedEye = true;
   String? typeSex;
+
   String? name, lastname, username, password, choosetype;
   final fromKey = GlobalKey<FormState>();
   @override
