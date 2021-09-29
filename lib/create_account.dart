@@ -76,10 +76,9 @@ class _CreateAccountState extends State<CreateAccount> {
           child: RadioListTile(
             value: 'Host',
             groupValue: typeUser,
-            onChanged: (Value) {
-              setState(() {
-                typeUser = Value as String?;
-              });
+            onChanged: (value) {
+              typeUser = value as String?;
+              setState(() {});
             },
             title: ShowTitle(
               title: 'Host',
@@ -433,9 +432,17 @@ class _CreateAccountState extends State<CreateAccount> {
                     password == null ||
                     name == null ||
                     lastname == null ||
-                    email == null) {
+                    email == null ||
+                    username == '' ||
+                    password == '' ||
+                    name == '' ||
+                    lastname == '' ||
+                    email == '') {
                   print('Have Spece');
-                } else if (typeUser == null || typeSex == null) {}
+                } else if (typeUser == null ||
+                    typeSex == null ||
+                    typeSex == '' ||
+                    typeUser == '') {}
               },
               child: Text('REGISTER')),
         )
