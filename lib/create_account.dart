@@ -141,7 +141,7 @@ class _CreateAccountState extends State<CreateAccount> {
             },
             decoration: InputDecoration(
               labelStyle: MyConstant().h3(),
-              labelText: ' UserName : ',
+              labelText: 'UserName: ',
               prefixIcon:
                   Icon(Icons.account_circle_outlined, color: MyConstant.dark),
               enabledBorder: OutlineInputBorder(
