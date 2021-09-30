@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:shaman/my_constant.dart';
+import 'package:shaman/utility/my_constant.dart';
 import 'package:shaman/widgets/show_img.dart';
 import 'package:shaman/widgets/show_title.dart';
 

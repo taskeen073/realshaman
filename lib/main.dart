@@ -3,7 +3,7 @@ import 'package:shaman/authen.dart';
 import 'package:shaman/create_account.dart';
 import 'package:shaman/customer_service.dart';
 import 'package:shaman/host_service.dart';
-import 'package:shaman/my_constant.dart';
+import 'package:shaman/utility/my_constant.dart';
 
 final Map<String, WidgetBuilder> map = {
   '/authen': (BuildContext context) => Authen(),
