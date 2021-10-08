@@ -1,0 +1,25 @@
+-------------------- Auto-Git Log --------------------
+		Fri Oct 01 2021 04:37:15 GMT+0700 (Indochina Time)
+------------------------------------------------------
+
+Modified files:
+* lib/authen.dart
+* lib/create_account.dart
+* lib/main.dart
+
+
+Created files:
+* .autogit/logs/log-29-8-2021-9-43-25.txt
+* lib/utility/myconstant.dart
+* lib/utility/normalDialog.dart
+* lib/utility/sever.dart
+
+
+Deleted files:
+* lib/testdb/UngFoodAPI_database/UngFood.sql
+* lib/testdb/UngFoodAPI_database/addUser.php
+* lib/testdb/UngFoodAPI_database/getUserWhereUser.php
+
+
+Renamed files:
+* [object Object]
