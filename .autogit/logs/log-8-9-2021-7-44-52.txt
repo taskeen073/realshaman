@@ -1,0 +1,19 @@
+-------------------- Auto-Git Log --------------------
+		Fri Oct 08 2021 07:44:52 GMT+0700 (Indochina Time)
+------------------------------------------------------
+
+Modified files:
+* pubspec.lock
+* pubspec.yaml
+
+
+Created files:
+* .autogit/logs/log-1-9-2021-4-37-15.txt
+* lib/screen/tlogin.dart
+* lib/utility/mystyle.dart
+
+
+Deleted files:
+
+
+Renamed files:
